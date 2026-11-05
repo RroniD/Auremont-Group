@@ -1,0 +1,5 @@
+# Netlify and Cloudflare Pages read this file. HTTP to HTTPS is automatic on both.
+https://www.auremont-group.com/*  https://auremont-group.com/:splat  301!
+http://www.auremont-group.com/*   https://auremont-group.com/:splat  301!
+/privacy     /en/privacy/   301
+/en/privatesia  /en/privacy/  301

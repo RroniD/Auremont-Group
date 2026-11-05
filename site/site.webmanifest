@@ -1,0 +1,27 @@
+{
+  "name": "Auremont Group",
+  "short_name": "Auremont",
+  "lang": "sq",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0F0F0D",
+  "theme_color": "#0F0F0D",
+  "icons": [
+    {
+      "src": "/assets/logo/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logo/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logo/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
