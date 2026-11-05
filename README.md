@@ -61,6 +61,7 @@ Then open http://localhost:8000.
 Any static host that serves `site/` as the web root will work.
 
 - **Netlify or Cloudflare Pages:** set the publish directory to `site` and leave the build command empty. `_headers` and `_redirects` are applied automatically. Add the domain and enable HTTPS.
+- **GitHub Pages:** in the repository settings under Pages, set the source to "GitHub Actions". The workflow in `.github/workflows/pages.yml` publishes `site/` on every push to `main`. GitHub Pages does not read `_headers` or `.htaccess`, so the security headers are not sent there.
 - **Apache (cPanel and similar):** upload the contents of `site/` to `public_html`, including `.htaccess` and `.well-known/`, and enable AutoSSL or Let's Encrypt.
 
 Both configurations redirect all traffic to `https://auremont-group.com` (without `www`), send HSTS and the other security headers, cache static files for 30 days and serve `404.html` for missing pages.
