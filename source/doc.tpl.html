@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="{{LANG}}" data-page="doc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{{HEAD}}
+<link rel="preload" href="{{ROOT}}assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ROOT}}css/style.css?v={{V:css/style.css}}">
+{{BOOT}}
+<script src="{{ROOT}}js/consent.js?v={{V:js/consent.js}}" defer></script>
+</head>
+<body class="doc-page">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-mark" viewBox="134.2 118.9 85.9 44.6"><path fill-rule="evenodd" d="{{MARK}}"/></symbol>
+  <symbol id="logo-word" viewBox="102.9 173.2 148.5 29.4"><path d="{{WORD}}"/><path d="{{GROUP}}"/></symbol>
+</svg>
+<a class="skip" href="#main">{{SKIP}}</a>
+
+<header class="doc-head">
+  <div class="doc-head__in wrap">
+    <a class="nav__brand" href="{{HOME}}" aria-label="Auremont Group">
+      <svg class="nav__mark"><use href="#logo-mark"/></svg>
+      <svg class="nav__word"><use href="#logo-word"/></svg>
+    </a>
+    {{LANGNAV}}
+  </div>
+</header>
+
+<main id="main" class="doc">
+  <article class="doc__in wrap">
+{{CONTENT}}
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="foot__grid wrap">
+    <a class="foot__logo" href="{{HOME}}" aria-label="Auremont Group">
+      <svg class="foot__mark"><use href="#logo-mark"/></svg>
+      <svg class="foot__word"><use href="#logo-word"/></svg>
+    </a>
+    <ul class="foot__links">
+      <li><a href="{{HOME}}#about" data-i18n="nav.about">Rreth nesh</a></li>
+      <li><a href="{{HOME}}#fields" data-i18n="nav.fields">Fushat</a></li>
+      <li><a href="{{HOME}}#gallery" data-i18n="nav.gallery">Galeria</a></li>
+      <li><a href="{{HOME}}#contact" data-i18n="nav.contact">Kontakt</a></li>
+    </ul>
+    <ul class="foot__legal mono">
+      <li>© <span class="foot__year">2026</span> Auremont Group</li>
+      <li><a href="{{PRIVACY}}" data-i18n="foot.privacy">Privatësia</a></li>
+      <li><button type="button" data-cc-open data-i18n="foot.cookies">Cilësimet e cookies</button></li>
+    </ul>
+  </div>
+</footer>
+
+{{CONSENT}}
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="{{LANG}}" data-page="home">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{{HEAD}}
+<link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v={{V:css/style.css}}">
+{{BOOT}}
+<script src="js/consent.js?v={{V:js/consent.js}}" defer></script>
+{{JSONLD}}
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-mark" viewBox="134.2 118.9 85.9 44.6"><path fill-rule="evenodd" d="{{MARK}}"/></symbol>
+  <symbol id="logo-word" viewBox="102.9 173.2 148.5 29.4"><path d="{{WORD}}"/><path d="{{GROUP}}"/></symbol>
+</svg>
+
+<a class="skip" href="#main" data-i18n="skip">Kalo te përmbajtja</a>
+
+<div class="intro" aria-hidden="true">
+  <div class="intro__brand">
+    <svg class="intro__mark"><use href="#logo-mark"/></svg>
+    <svg class="intro__word"><use href="#logo-word"/></svg>
+  </div>
+</div>
+
+<header class="nav">
+  <nav class="nav__pill" aria-label="Kryesore" data-i18n-attr="aria-label:nav.main">
+    <span class="nav__bg" aria-hidden="true"></span>
+    <ul class="nav__links nav__links--l">
+      <li><a href="#about" data-i18n="nav.about">Rreth nesh</a></li>
+      <li><a href="#fields" data-i18n="nav.fields">Fushat</a></li>
+    </ul>
+    <a class="nav__brand" href="#top" aria-label="Auremont Group">
+      <svg class="nav__mark"><use href="#logo-mark"/></svg>
+      <svg class="nav__word"><use href="#logo-word"/></svg>
+    </a>
+    <ul class="nav__links nav__links--r">
+      <li><a href="#gallery" data-i18n="nav.gallery">Galeria</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+    </ul>
+    <button class="nav__burger" type="button" aria-expanded="false" aria-controls="mmenu" data-i18n-attr="aria-label:nav.menu" aria-label="Menyja"><span></span><span></span></button>
+  </nav>
+  <nav class="lang" aria-label="Gjuha / Language">
+    <a href="{{HREF_SQ}}" hreflang="sq" lang="sq" data-lang="sq">SQ</a>
+    <a href="{{HREF_EN}}" hreflang="en" lang="en" data-lang="en">EN</a>
+  </nav>
+</header>
+
+<div class="mmenu" id="mmenu" hidden>
+  <ul>
+    <li><a href="#about" data-i18n="nav.about">Rreth nesh</a></li>
+    <li><a href="#fields" data-i18n="nav.fields">Fushat</a></li>
+    <li><a href="#gallery" data-i18n="nav.gallery">Galeria</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+  </ul>
+  <div class="mmenu__lang" role="group" aria-label="Gjuha / Language">
+    <a href="{{HREF_SQ}}" hreflang="sq" lang="sq" data-lang="sq">Shqip</a>
+    <a href="{{HREF_EN}}" hreflang="en" lang="en" data-lang="en">English</a>
+  </div>
+</div>
+
+<div class="tint" aria-hidden="true"></div>
+
+<main id="main">
+
+  <!-- 1. Hero: interactive grid -->
+  <section class="hero" id="top">
+    <canvas class="hero__grid" aria-hidden="true"></canvas>
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="hero__foot wrap">
+      <h1 class="hero__title" data-i18n-html="hero.title">Ndërtojmë infrastrukturën e Kosovës që nga viti <em>1990</em>.</h1>
+    </div>
+    <a class="hero__cue" href="#kosovo" data-i18n-attr="aria-label:hero.cue" aria-label="Lëvizni poshtë"><span class="hero__cue-in" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4.5v14.5M6.5 13.5 12 19l5.5-5.5"/></svg><svg viewBox="0 0 24 24"><path d="M12 4.5v14.5M6.5 13.5 12 19l5.5-5.5"/></svg></span></a>
+  </section>
+
+  <!-- 2. Yellow ink opens into the map of Kosovo -->
+  <section class="stage stage--open" id="kosovo" aria-labelledby="ks-l">
+    <div class="stage__sticky">
+      <svg class="stage__svg" aria-hidden="true">
+        <defs>
+          <filter id="ink-open" x="-25%" y="-25%" width="150%" height="150%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="11" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+          <pattern id="grid-open" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#0F0F0D" stroke-opacity=".1" stroke-width="1"/></pattern>
+        </defs>
+        <g class="stage__shape">
+          <path class="stage__fill" fill="#FFC21A"/>
+          <path class="stage__grid" fill="url(#grid-open)"/>
+        </g>
+        <g class="stage__pins"></g>
+        <rect class="stage__cover" x="0" y="0" width="100%" height="100%" fill="#FFC21A" opacity="0"/>
+      </svg>
+      <div class="stage__text stage__text--l wrap-l">
+        <p class="eyebrow eyebrow--light"><i></i><span data-i18n="ks.eyebrow">Selia · Pejë</span></p>
+        <h2 class="stage__lead" id="ks-l" data-i18n="ks.l">Me seli në Pejë, me projekte në të gjithë Kosovën.</h2>
+      </div>
+      <div class="stage__text stage__text--r wrap-r">
+        <p data-i18n="ks.r">Nga rrjetet e ujit te objektet, me beton dhe armaturë nga prodhimi ynë.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. About: word-by-word reveal -->
+  <section class="about" id="about" aria-labelledby="about-h">
+    <div class="about__sticky">
+      <div class="about__grid wrap">
+        <div class="about__side">
+          <h2 class="eyebrow" id="about-h"><i></i><span data-i18n="about.eyebrow">Rreth kompanisë</span></h2>
+          <p class="about__meta" data-i18n="about.meta">Themeluar 1990 · Pejë, Kosovë</p>
+        </div>
+        <p class="about__text" data-i18n="about.text" data-split>Auremont është kompani ndërtimi me seli në Pejë, e themeluar në vitin 1990. Prodhojmë beton të freskët dhe rrjeta armature, ndërtojmë infrastrukturë dhe objekte, dhe ofrojmë projektim arkitektonik. Duke i mbajtur këto procese brenda kompanisë, kontrollojmë cilësinë dhe afatet në çdo fazë të punës.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Fields: tilted card, one field at a time -->
+  <section class="fields" id="fields" aria-labelledby="fields-h">
+    <div class="fields__back" aria-hidden="true">
+      <p class="fields__since"><span class="fields__since-a" data-i18n="fields.since">Që nga</span><span class="fields__since-b">1990</span></p>
+    </div>
+    <div class="card-wrap">
+      <article class="card">
+        <header class="card__top">
+          <span data-i18n="fields.label">Fushat tona</span>
+          <span class="mono"><span class="card__idx">01</span> / 07</span>
+        </header>
+        <h2 class="card__title" id="fields-h">
+          <span data-i18n="fields.t1">E prodhojmë</span>
+          <span data-i18n="fields.t2">vetë.</span>
+          <span class="card__title-2" data-i18n="fields.t3">E ndërtojmë vetë.</span>
+        </h2>
+        <p class="card__sub" data-i18n="fields.sub">Shtatë fusha pune nën një kompani, nga materiali deri te dorëzimi i objektit.</p>
+        <ol class="rows">
+          <li class="row" data-group="infra">
+            <div class="row__head"><span class="row__n mono">01</span><span class="row__g" data-i18n="g.infra">Infrastrukturë</span><h3 class="row__t" data-i18n="f1.t">Ujësjellës dhe kanalizim</h3></div>
+            <figure class="row__media"><img src="assets/photos/01-water.webp" alt="" data-i18n-attr="alt:f1.alt" width="800" height="600" loading="lazy" decoding="async"></figure>
+            <p class="row__d" data-i18n="f1.d">Rrjete të ujit të pijshëm dhe sisteme kanalizimi për qytete dhe fshatra. Gërmimin, shtrimin e gypave, pusetat dhe kyçjet në rrjetin ekzistues i kryejnë ekipet tona.</p>
+          </li>
+          <li class="row" data-group="infra">
+            <div class="row__head"><span class="row__n mono">02</span><span class="row__g" data-i18n="g.infra">Infrastrukturë</span><h3 class="row__t" data-i18n="f2.t">Kanale ujitëse</h3></div>
+            <figure class="row__media"><img src="assets/photos/02-canal.webp" alt="" data-i18n-attr="alt:f2.alt" width="800" height="600" loading="lazy" decoding="async"></figure>
+            <p class="row__d" data-i18n="f2.d">Ndërtim dhe rehabilitim i kanaleve të ujitjes me veshje betoni, bashkë me portat dhe objektet që e shpërndajnë ujin nëpër parcela.</p>
+          </li>
+          <li class="row" data-group="infra">
+            <div class="row__head"><span class="row__n mono">03</span><span class="row__g" data-i18n="g.infra">Infrastrukturë</span><h3 class="row__t" data-i18n="f3.t">Diga dhe rezervuarë</h3></div>
+            <figure class="row__media"><img src="assets/photos/03-dam.webp" alt="" data-i18n-attr="alt:f3.alt" width="800" height="600" loading="lazy" decoding="async"></figure>
+            <p class="row__d" data-i18n="f3.d">Diga, prita dhe rezervuarë uji të ndërtuar sipas projektit hidroteknik, me kontroll të betonit dhe të hidroizolimit në çdo fazë.</p>
+          </li>
+          <li class="row" data-group="prod">
+            <div class="row__head"><span class="row__n mono">04</span><span class="row__g" data-i18n="g.prod">Prodhim</span><h3 class="row__t" data-i18n="f4.t">Prodhim betoni</h3></div>
+            <figure class="row__media"><img src="assets/photos/04-concrete.webp" alt="" data-i18n-attr="alt:f4.alt" width="800" height="600" loading="lazy" decoding="async"></figure>
+            <p class="row__d" data-i18n="f4.d">Beton i freskët nga fabrika jonë, me receta të kontrolluara dhe klasë sipas kërkesës së projektit. E dërgojmë me autobetoniere direkt në kantier.</p>
+          </li>
+          <li class="row" data-group="prod">
+            <div class="row__head"><span class="row__n mono">05</span><span class="row__g" data-i18n="g.prod">Prodhim</span><h3 class="row__t" data-i18n="f5.t">Prodhim armature</h3></div>
+            <figure class="row__media"><img src="assets/photos/05-rebar.webp" alt="" data-i18n-attr="alt:f5.alt" width="800" height="600" loading="lazy" decoding="async"></figure>
+            <p class="row__d" data-i18n="f5.d">Prerje, përkulje dhe saldim i armaturës dhe i rrjetave sipas skemave të projektit, gati për montim në kantier.</p>
+          </li>
+          <li class="row" data-group="build">
+            <div class="row__head"><span class="row__n mono">06</span><span class="row__g" data-i18n="g.build">Ndërtesa</span><h3 class="row__t" data-i18n="f6.t">Projekte ndërtimi</h3></div>
+            <figure class="row__media"><img src="assets/photos/06-build.webp" alt="" data-i18n-attr="alt:f6.alt" width="800" height="600" loading="lazy" decoding="async"></figure>
+            <p class="row__d" data-i18n="f6.d">Objekte banimi, afariste dhe publike, nga themelet deri te dorëzimi me çelës në dorë.</p>
+          </li>
+          <li class="row" data-group="arch">
+            <div class="row__head"><span class="row__n mono">07</span><span class="row__g" data-i18n="g.arch">Arkitekturë</span><h3 class="row__t" data-i18n="f7.t">Arkitekturë</h3></div>
+            <figure class="row__media"><img src="assets/photos/07-arch.webp" alt="" data-i18n-attr="alt:f7.alt" width="800" height="600" loading="lazy" decoding="async"></figure>
+            <p class="row__d" data-i18n="f7.d">Projektim arkitektonik dhe dokumentacion teknik për leje dhe zbatim, nga një ekip që e njeh edhe kantierin.</p>
+          </li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <!-- 5. Gallery: two moving rows of photos, click to enlarge -->
+  <section class="gallery" id="gallery" aria-labelledby="gallery-h">
+    <div class="gallery__head wrap">
+      <p class="eyebrow"><i></i><span data-i18n="gal.eyebrow">Galeria</span></p>
+      <h2 class="gallery__h" id="gallery-h" data-i18n="gal.h">Në kantier.</h2>
+      <p class="gallery__p" data-i18n="gal.p">Rrjete uji, diga, themele dhe objekte në ndërtim.</p>
+    </div>
+    <div class="gallery__rows">
+      <div class="marquee" data-dir="-1">
+        <div class="marquee__track">
+          <button class="shot" type="button" data-i="0"><img src="assets/photos/g01.webp" srcset="assets/photos/g01-640.webp 640w, assets/photos/g01.webp 1024w" sizes="(max-width: 800px) 267px, (min-width: 1520px) 507px, 33vw" data-full="assets/photos/g01.webp" data-i18n-attr="alt:gal.a1" alt="Vinça ndërtimi mbi një lagje banimi" width="1024" height="768" loading="lazy" decoding="async"></button>
+          <button class="shot" type="button" data-i="1"><img src="assets/photos/g02.webp" srcset="assets/photos/g02-640.webp 512w, assets/photos/g02.webp 597w" sizes="(max-width: 800px) 160px, (min-width: 1520px) 304px, 20vw" data-full="assets/photos/g02.webp" data-i18n-attr="alt:gal.a2" alt="Punëtorë duke montuar kallëpet e betonit" width="597" height="746" loading="lazy" decoding="async"></button>
+          <button class="shot" type="button" data-i="2"><img src="assets/photos/g03.webp" srcset="assets/photos/g03-640.webp 640w, assets/photos/g03.webp 1024w" sizes="(max-width: 800px) 267px, (min-width: 1520px) 507px, 33vw" data-full="assets/photos/g03.webp" data-i18n-attr="alt:gal.a3" alt="Themele me armaturë në një kantier të madh" width="1024" height="768" loading="lazy" decoding="async"></button>
+          <button class="shot" type="button" data-i="3"><img src="assets/photos/g04.webp" srcset="assets/photos/g04-640.webp 640w, assets/photos/g04.webp 1024w" sizes="(max-width: 800px) 267px, (min-width: 1520px) 507px, 33vw" data-full="assets/photos/g04.webp" data-i18n-attr="alt:gal.a4" alt="Prag uji me shkallë betoni në një lumë" width="1024" height="768" loading="lazy" decoding="async"></button>
+          <button class="shot" type="button" data-i="4"><img src="assets/photos/g05.webp" srcset="assets/photos/g05-640.webp 640w, assets/photos/g05.webp 1024w" sizes="(max-width: 800px) 267px, (min-width: 1520px) 507px, 33vw" data-full="assets/photos/g05.webp" data-i18n-attr="alt:gal.a5" alt="Ekskavator pranë një muri mbajtës me blloqe betoni" width="1024" height="768" loading="lazy" decoding="async"></button>
+        </div>
+      </div>
+      <div class="marquee" data-dir="1">
+        <div class="marquee__track">
+          <button class="shot" type="button" data-i="5"><img src="assets/photos/g06.webp" srcset="assets/photos/g06-640.webp 512w, assets/photos/g06.webp 614w" sizes="(max-width: 800px) 160px, (min-width: 1520px) 304px, 20vw" data-full="assets/photos/g06.webp" data-i18n-attr="alt:gal.a6" alt="Mbikalim betoni mbi një rrugë" width="614" height="768" loading="lazy" decoding="async"></button>
+          <button class="shot" type="button" data-i="6"><img src="assets/photos/g07.webp" srcset="assets/photos/g07-640.webp 512w, assets/photos/g07.webp 614w" sizes="(max-width: 800px) 160px, (min-width: 1520px) 304px, 20vw" data-full="assets/photos/g07.webp" data-i18n-attr="alt:gal.a7" alt="Skela metalike në një ndërtesë në ndërtim" width="614" height="768" loading="lazy" decoding="async"></button>
+          <button class="shot" type="button" data-i="7"><img src="assets/photos/g08.webp" srcset="assets/photos/g08-640.webp 640w, assets/photos/g08.webp 911w" sizes="(max-width: 800px) 267px, (min-width: 1520px) 507px, 33vw" data-full="assets/photos/g08.webp" data-i18n-attr="alt:gal.a8" alt="Themele guri të një objekti" width="911" height="683" loading="lazy" decoding="async"></button>
+          <button class="shot" type="button" data-i="8"><img src="assets/photos/g09.webp" srcset="assets/photos/g09-640.webp 640w, assets/photos/g09.webp 885w" sizes="(max-width: 800px) 267px, (min-width: 1520px) 506px, 33vw" data-full="assets/photos/g09.webp" data-i18n-attr="alt:gal.a9" alt="Prag uji në një lumë malor" width="885" height="664" loading="lazy" decoding="async"></button>
+          <button class="shot" type="button" data-i="9"><img src="assets/photos/g10.webp" srcset="assets/photos/g10-640.webp 640w, assets/photos/g10.webp 768w" sizes="(max-width: 800px) 267px, (min-width: 1520px) 507px, 33vw" data-full="assets/photos/g10.webp" data-i18n-attr="alt:gal.a10" alt="Rezervuar uji mes kodrave" width="768" height="576" loading="lazy" decoding="async"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dialog class="lb" aria-labelledby="lb-count">
+    <figure class="lb__fig"><img class="lb__img" alt=""></figure>
+    <p class="lb__count mono" id="lb-count">01 / 10</p>
+    <button class="lb__btn lb__close" type="button" data-i18n-attr="aria-label:gal.close" aria-label="Mbyll"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <button class="lb__btn lb__prev" type="button" data-i18n-attr="aria-label:gal.prev" aria-label="Fotoja e mëparshme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+    <button class="lb__btn lb__next" type="button" data-i18n-attr="aria-label:gal.next" aria-label="Fotoja tjetër"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </dialog>
+
+  <!-- 6. The map closes -->
+  <section class="stage stage--close" aria-labelledby="close-l">
+    <div class="stage__sticky">
+      <svg class="stage__svg" aria-hidden="true">
+        <defs>
+          <filter id="ink-close" x="-25%" y="-25%" width="150%" height="150%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="4" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+          <pattern id="grid-close" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#0F0F0D" stroke-opacity=".1" stroke-width="1"/></pattern>
+        </defs>
+        <g class="stage__shape">
+          <path class="stage__fill" fill="#FFC21A"/>
+          <path class="stage__grid" fill="url(#grid-close)"/>
+        </g>
+        <g class="stage__pins"></g>
+        <rect class="stage__cover" x="0" y="0" width="100%" height="100%" fill="#FFC21A" opacity="1"/>
+      </svg>
+      <div class="stage__text stage__text--l wrap-l">
+        <h2 class="stage__big" id="close-l" data-i18n="close.l">Na gjeni në Pejë.</h2>
+      </div>
+      <div class="stage__text stage__text--r wrap-r">
+        <p data-i18n="close.r">Na tregoni për projektin tuaj dhe ne ju kontaktojmë.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Contact + Google Maps -->
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="contact__grid wrap">
+      <div class="contact__info">
+        <p class="eyebrow eyebrow--light"><i></i><span data-i18n="contact.eyebrow">Kontakt</span></p>
+        <h2 class="contact__h" id="contact-h" data-i18n="contact.h">Le të flasim për projektin tuaj.</h2>
+        <dl class="facts">
+          <div><dt data-i18n="contact.addr">Adresa</dt><dd data-i18n="contact.addrv">Pejë, Kosovë</dd></div>
+          <div><dt data-i18n="contact.phone">Telefoni</dt><dd><a href="tel:+383000000000">+383 XX XXX XXX</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:info@auremont-group.com">info@auremont-group.com</a></dd></div>
+          <div><dt data-i18n="contact.hours">Orari</dt><dd data-i18n="contact.hoursv">E hënë – e premte, 08:00–16:00</dd></div>
+        </dl>
+      </div>
+      <form class="form" id="form" novalidate>
+        <div class="form__row">
+          <label for="f-name" data-i18n="form.name">Emri dhe mbiemri</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="form__row">
+          <label for="f-contact" data-i18n="form.contact">Telefoni ose emaili</label>
+          <input id="f-contact" name="contact" type="text" autocomplete="email" required>
+        </div>
+        <div class="form__row">
+          <label for="f-field" data-i18n="form.field">Fusha</label>
+          <select id="f-field" name="field">
+            <option value="" data-i18n="form.choose">Zgjidhni fushën</option>
+            <option data-i18n="f1.t">Ujësjellës dhe kanalizim</option>
+            <option data-i18n="f2.t">Kanale ujitëse</option>
+            <option data-i18n="f3.t">Diga dhe rezervuarë</option>
+            <option data-i18n="f4.t">Prodhim betoni</option>
+            <option data-i18n="f5.t">Prodhim armature</option>
+            <option data-i18n="f6.t">Projekte ndërtimi</option>
+            <option data-i18n="f7.t">Arkitekturë</option>
+          </select>
+        </div>
+        <div class="form__row">
+          <label for="f-msg" data-i18n="form.msg">Përshkruani projektin</label>
+          <textarea id="f-msg" name="message" rows="4" required data-i18n-attr="placeholder:form.msgph" placeholder="Vendndodhja, afati, sasitë e përafërta"></textarea>
+        </div>
+        <button class="btn btn--yellow" type="submit"><span data-i18n="form.send">Dërgo kërkesën</span><i aria-hidden="true">→</i></button>
+        <p class="form__note" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="wrap">
+      <div class="map">
+        <div class="map__frame" data-src="https://www.google.com/maps?q=42.6593,20.2883&amp;z=14&amp;hl=sq&amp;output=embed"></div>
+        <div class="map__static">
+          <img class="map__img" src="assets/map/peja.webp" srcset="assets/map/peja-1400.webp 1400w, assets/map/peja.webp 2800w" sizes="(max-width: 699px) 920px, min(100vw, 1460px)" data-i18n-attr="alt:map.alt" alt="Harta e Pejës me vendndodhjen e Auremont Group" width="2800" height="1600" loading="lazy" decoding="async">
+          <span class="map__pin" aria-hidden="true"><svg class="map__pin-mark"><use href="#logo-mark"/></svg></span>
+          <span class="map__attr">© OpenStreetMap · Overture Maps</span>
+        </div>
+        <div class="map__consent" hidden>
+          <button class="map__load" type="button"><span data-i18n="map.load">Shfaq hartën interaktive</span></button>
+          <p data-i18n="map.note">Ngarkohet nga Google Maps, që mund të vendosë cookies.</p>
+        </div>
+        <a class="map__card" href="https://share.google/pdYurMQRCZzFXRY7z" target="_blank" rel="noopener">
+          <span class="map__card-t">Auremont Group</span>
+          <span class="map__card-a" data-i18n="contact.addrv">Pejë, Kosovë</span>
+          <span class="map__card-l"><span data-i18n="map.open">Hap në Google Maps</span> ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__grid wrap">
+    <a class="foot__logo" href="#top" aria-label="Auremont Group">
+      <svg class="foot__mark"><use href="#logo-mark"/></svg>
+      <svg class="foot__word"><use href="#logo-word"/></svg>
+    </a>
+    <ul class="foot__links">
+      <li><a href="#about" data-i18n="nav.about">Rreth nesh</a></li>
+      <li><a href="#fields" data-i18n="nav.fields">Fushat</a></li>
+      <li><a href="#gallery" data-i18n="nav.gallery">Galeria</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+    </ul>
+    <ul class="foot__legal mono">
+      <li>© <span class="foot__year">2026</span> Auremont Group</li>
+      <li><a href="{{PRIVACY}}" data-i18n="foot.privacy">Privatësia</a></li>
+      <li><button type="button" data-cc-open data-i18n="foot.cookies">Cilësimet e cookies</button></li>
+      <li><a href="assets/photos/CREDITS.md" data-i18n="foot.credits">Kreditë e fotove</a></li>
+    </ul>
+  </div>
+</footer>
+
+{{CONSENT}}
+
+<script src="js/vendor/gsap.min.js" defer></script>
+<script src="js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="js/vendor/lenis.min.js" defer></script>
+<script src="js/vendor/flubber.min.js" defer></script>
+<script src="js/kosovo-data.js?v={{V:js/kosovo-data.js}}" defer></script>
+<script src="js/i18n.js?v={{V:js/i18n.js}}" defer></script>
+<script src="js/grid.js?v={{V:js/grid.js}}" defer></script>
+<script src="js/main.js?v={{V:js/main.js}}" defer></script>
+</body>
+</html>
