@@ -1,13 +1,13 @@
-"""Builds the static site into site/:
+"""Builds the static site into the repository root:
    index.html (sq), en/index.html, privatesia/index.html, en/privacy/index.html, 404.html,
    sitemap.xml, robots.txt, site.webmanifest, host config (_headers, _redirects, .htaccess),
-   .well-known/security.txt. Texts for English come from js/i18n.js."""
+   .well-known/security.txt and .nojekyll. Texts for English come from js/i18n.js."""
 import base64, hashlib, html as H, json, os, re
 
 # Run with Python 3 from anywhere:  python3 source/build.py
-# Templates live next to this file; the site is written to ../site (or AUREMONT_SITE).
+# Templates live next to this file; the site is written to the repository root (or AUREMONT_SITE).
 HERE = os.path.dirname(os.path.abspath(__file__))
-SITE = os.path.abspath(os.environ.get('AUREMONT_SITE', os.path.join(HERE, '..', 'site'))) + '/'
+SITE = os.path.abspath(os.environ.get('AUREMONT_SITE', os.path.join(HERE, '..'))) + '/'
 DOMAIN = 'https://auremont-group.com'
 UPDATED = '2026-11-05'
 UPDATED_TXT = {'sq': '5 nëntor 2026', 'en': '5 November 2026'}
@@ -276,6 +276,8 @@ ht += ['  <FilesMatch "\\.(woff2|webp|png|jpg|svg|ico|css|js)$">',
        'AddType image/webp .webp',
        '']
 write('.htaccess', '\n'.join(ht))
+# GitHub Pages: serve the files as they are, without Jekyll
+write('.nojekyll', '')
 
 fav = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0F0F0D"/><svg x="8" y="14" width="48" height="36" viewBox="134.2 118.9 85.9 44.6"><path fill="#FFC21A" fill-rule="evenodd" d="{parts["mark"]}"/></svg></svg>'
 write('assets/logo/favicon.svg', fav)
